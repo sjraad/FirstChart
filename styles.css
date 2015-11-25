@@ -1,0 +1,7 @@
+.chart {
+    border: 1px solid red;   
+}
+
+#chart_div {
+    width: 1000px;
+}
