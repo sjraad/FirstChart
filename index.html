@@ -4,12 +4,29 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
-    <link rel="stylesheet" type="text/css"href="styles.css" >
-    
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">    
   </head>
 
   <body>
-    <!--Div that will hold the pie chart-->
-    <div class="chart" id="chart_div"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <!--Div that will hold the pie chart-->
+            <div class="col-md-12" id="chart_div"></div>
+        </div>
+        
+        <div class="row">
+            <div class="hidden-md hidden-lg">small and XS</div>
+            <div class="hidden-xs hidden-sm hidden-lg">medium</div>
+            <div class="hidden-xs hidden-sm hidden-md">large</div>
+        </div>
+        
+        
+        
+    </div>
+    
   </body>
 </html>
