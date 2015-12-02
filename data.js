@@ -1,4 +1,4 @@
-var allMyData = {
+var Data = {
     "realtime_start": "2013-08-14",
     "realtime_end": "2013-08-14",
     "observation_start": "1776-07-04",
