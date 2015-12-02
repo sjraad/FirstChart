@@ -2,6 +2,37 @@
  * @author Selim J Raad
  */
 // Credit Google
+   
+   var myTextStyle = {
+      fontName: 'Times-Roman',
+      fontSize: 18,
+      bold: true,
+      italic: true,
+      // The color of the text.
+      color: '#871b47',
+      // The color of the text outline.
+      auraColor: '#d799ae',
+      // The transparency of the text.
+      opacity: 0.8
+   };
+   
+   	
+	var myGrid = {
+		'color':'#ff0000'
+	};
+
+	// Set chart options
+    var options = {'title':'Real Gross National Product',
+                   'width':600,
+                   'height':500,
+                   'hAxis':{},
+                   'vAxis':{}
+                  }; // end of options
+		
+	options.hAxis.textStyle = myTextStyle;
+	options.vAxis.textStyle = myTextStyle;
+	options.vAxis.gridlines = myGrid;
+   		
    // Load the Visualization API and the piechart package.
       google.load('visualization', '1.0', {'packages':['corechart']});
 
@@ -13,29 +44,24 @@
       // draws it.
       function drawChart() {
 
-        var myDataArray = [];
-        var myObs = allMyData.observations;
+        var arraysData = [];
         
-            for(var i=0; i<myObs.length; i++){
+           for(var i=0; i<Data.observations.length; i++){
                 
-                var myItem = [];
-                myItem.push(myObs[i].date);
-                myItem.push(Number(myObs[i].value));
-                myDataArray.push(myItem);
+                var itemArray = [];
+                // have to use "new" keyword with Dates
+                itemArray.push(new Date (Data.observations[i].date));
+                itemArray.push( Number(Data.observations[i].value) );
+                arraysData.push(itemArray);
             }
         
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'GDP');
-        data.addRows(myDataArray);
+        	// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('date', 'Date');
+			data.addColumn('number', 'GDP');
+			data.addRows(arraysData);
 
-        // Set chart options
-        var options = {'title':'Real Gross National Product',
-                       'width':1000,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
+         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
